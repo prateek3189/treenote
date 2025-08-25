@@ -1,0 +1,1 @@
+I've drafted the **TreeNote requirement document** covering objectives, features, tech stack, and milestones. Would you like me to expand it with **detailed user stories and wireframe ideas** for better clarity?
