@@ -1,0 +1,52 @@
+<%- include("common/header") %>
+    <main class="main-container">
+      <div class="item-container">
+        <div class="item-header">
+          <h2>Categories</h2>
+          <a href="/categories/add" class="primary-button">Add</a>
+        </div>
+        
+
+        <table
+          class="data-table"
+          id="categories-table"
+          cellspadding="0"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(categories.length) { %>
+            <% for(const category of categories ) { %>
+            <tr>
+              <td><%= category.name %></td>
+              <td class="flex-action">
+                <a href="/categories/edit/<%= category.id %>"
+                  ><i class="fa-solid fa-pen" style="color: #7f56fb"></i
+                ></a>
+                <form action="/categories/delete" method="post">
+                  <input type="hidden" name="id" id="id" value="<%= category.id %>">
+                  <button type="submit" class="link">
+                    <i class="fa-solid fa-trash" style="color: #7f56fb"></i
+                      >
+                   </button>
+                </form>
+              </td>
+            </tr>
+            <% } %> 
+            <% } else { %> <tr>
+              <td colspan="4">No Categories Found</td>
+            </tr><% }%>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>

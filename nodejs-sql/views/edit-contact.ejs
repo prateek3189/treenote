@@ -1,0 +1,40 @@
+<%- include("common/header") %>
+
+    <main class="main-container">
+      <div class="item-container">
+        <div class="item-header">
+          <h2>Edit Contact</h2>
+        </div>
+        <form action="/contacts/update" method="post">
+          <input type="hidden" name="id" id="id" value="<%= contact.id %>">
+          <div class="contact-form vertical">
+            <div class="form-field">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" value="<%= contact.name %>" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Contact #:</label>
+              <input type="text" id="phone" name="phone" value="<%= contact.phone %>" required />
+            </div>
+            <div class="form-field">
+              <label for="category">Category:</label>
+              <select name="category" id="category">
+                <% for(const cat of categories) { %>
+                <option value="<%= cat.id %>" <%= +contact.category === +cat.id ? "selected" : "" %>><%= cat.name %></option>
+                <% } %>
+              </select>
+            </div>
+            <div class="form-field">
+              <button class="primary-button">Add</button>
+              <button class="secondary-button ml-10">Cancel</button>
+              <a href="/contacts" class="secondary-button ml-10">Back</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>
