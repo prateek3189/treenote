@@ -1,0 +1,750 @@
+@import "./_variables.css";
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 10px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbar-brand {
+    color: white;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: white;
+      }
+    }
+  }
+}
+
+/* Header layout */
+.header-left {
+  flex: 1;
+}
+
+/* Ensure hamburger is on extreme right */
+header .mobile-menu-toggle {
+  margin-left: auto;
+  order: 2;
+}
+
+/* Mobile responsive header */
+@media (max-width: 767px) {
+  header {
+    padding: 8px 15px;
+  }
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-text-color);
+  text-decoration: none;
+}
+
+/* Mobile responsive logo */
+@media (min-width: 768px) {
+  header .logo {
+    font-size: 24px;
+  }
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 101;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Show mobile menu toggle on mobile */
+@media (max-width: 767px) {
+  .mobile-menu-toggle {
+    display: flex;
+    width: 42px;
+  }
+}
+
+header img {
+  width: 100px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li a {
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.nav ul li a.selected {
+  color: #fff;
+  background-color: var(--primary-text-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 0 15px;
+}
+
+/* Mobile responsive main */
+@media (max-width: 767px) {
+  main {
+    padding: 0 10px;
+  }
+}
+
+footer {
+  background-color: var(--primary-color);
+  padding: 8px 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+  z-index: 5;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 767px) {
+  footer {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+}
+
+.login-box {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid var(--primary-color);
+}
+
+/* Tablet responsive login box */
+@media (min-width: 768px) {
+  .login-box {
+    width: 500px;
+    max-width: 500px;
+    margin-top: 80px;
+  }
+}
+
+/* Desktop responsive login box */
+@media (min-width: 1024px) {
+  .login-box {
+    width: 600px;
+    max-width: 600px;
+    margin-top: 100px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 300px;
+  padding: 10px;
+  border-right: 1px solid var(--primary-color);
+  height: calc(100vh - 120px);
+  background-color: #fff;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* Mobile responsive sidebar */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 120px);
+    background-color: #fff;
+    border-right: 1px solid var(--primary-color);
+    border-bottom: none;
+    padding: 20px 15px;
+    transition: left 0.3s ease;
+    z-index: 100;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar.mobile-open {
+    left: 0;
+  }
+
+  /* Mobile sidebar specific styling */
+  .sidebar nav ul li a {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    padding: 12px 10px;
+  }
+
+  .sidebar nav ul li a.selected {
+    background-color: var(--primary-color-light);
+    color: var(--primary-text-color);
+    border-color: var(--primary-color);
+  }
+}
+
+/* Tablet responsive sidebar */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    width: 180px;
+    padding: 8px;
+    height: calc(100vh - 120px);
+  }
+
+  .main-container {
+    margin-left: 180px;
+    padding-bottom: 60px;
+  }
+}
+
+.sidebar nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar nav ul li.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Mobile responsive list header */
+@media (max-width: 767px) {
+  .sidebar nav ul li.list-header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar nav ul li.list-header input {
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+  }
+
+  .sidebar nav ul li.list-header button {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+.sidebar nav ul li a.selected {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color-light);
+}
+
+.sidebar nav ul li a {
+  color: var(--primary-text-color);
+  font-weight: 600;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid var(--primary-color);
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  min-height: calc(100vh - 120px);
+  padding-bottom: 60px;
+}
+
+/* Mobile responsive main container */
+@media (max-width: 767px) {
+  .main-container {
+    flex-direction: column;
+    gap: 0;
+    min-height: calc(100vh - 100px);
+    margin-left: 0;
+    padding-bottom: 50px;
+  }
+}
+
+.item-container {
+  padding: 20px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.item-container ul {
+  border-left: 2px dotted var(--primary-color);
+}
+
+/* Mobile responsive item container */
+@media (max-width: 767px) {
+  .item-container {
+    padding: 10px;
+    margin-top: 0;
+  }
+
+  .item-container ul {
+    border-left: 1px dotted var(--primary-color);
+  }
+}
+
+/* Tablet responsive item container */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .item-container {
+    padding: 15px;
+  }
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--primary-color-light);
+}
+
+/* Mobile responsive item header */
+@media (max-width: 767px) {
+  .item-header {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+  }
+
+  .item-header h2 {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .item-header button {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    min-height: 32px;
+  }
+}
+
+.item-content {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 10px;
+  min-height: 44px;
+}
+
+/* Mobile responsive item content */
+@media (max-width: 767px) {
+  .item-content {
+    font-size: 0.9rem;
+    padding: 8px;
+    margin-bottom: 8px;
+    min-height: 48px;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .item-content p {
+    flex: 1;
+    min-width: 200px;
+    gap: 6px;
+  }
+
+  .item-content p input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .item-content button {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    min-height: 28px;
+  }
+}
+
+/* Tablet responsive item content */
+@media (min-width: 768px) {
+  .item-content {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop responsive item content */
+@media (min-width: 1024px) {
+  .item-content {
+    font-size: 1.2rem;
+  }
+}
+
+.item-content p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  margin-left: 25px;
+}
+
+.item-content p input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Style the text next to checkbox */
+.item-content p {
+  font-weight: 500;
+  color: #333;
+}
+
+.item-content p:has(input[type="checkbox"]:checked) {
+  text-decoration: line-through;
+  color: #666;
+}
+
+/* Collapsible list functionality */
+.item-content.expandable {
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+
+.item-content.expandable::after {
+  content: "▶";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.item-content.expandable.expanded::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+ul.collapsed {
+  display: none;
+}
+
+ul.collapsed.show {
+  display: block;
+}
+
+/* Smooth transition for expandable items */
+.item-content.expandable {
+  transition: background-color 0.2s ease;
+}
+
+.item-content.expandable:hover {
+  background-color: var(--primary-color-light);
+}
+
+/* Drag and drop functionality */
+.item-content.draggable {
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.item-content.draggable:active {
+  cursor: grabbing;
+}
+
+.item-content.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+  background-color: var(--primary-color-light);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-content.drag-over {
+  border-top: 3px solid var(--primary-color);
+  background-color: var(--primary-color-light);
+  transform: translateY(-2px);
+}
+
+/* Drag handle visual indicator */
+.item-content.draggable::before {
+  content: "⋮⋮";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 0.6rem;
+  line-height: 0.8;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Adjust arrow position when drag handle is present */
+.item-content.draggable.expandable::after {
+  left: 20px;
+}
+
+/* Adjust content margin when drag handle is present */
+.item-content.draggable p {
+  margin-left: 35px;
+}
+
+.item-content input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Remove old checkbox styles */
+.item-content input {
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  cursor: default;
+}
+
+.timeline-icon {
+  width: 20px;
+  height: 40px;
+  border-bottom: 2px dotted var(--primary-color);
+  position: absolute;
+  left: -30px;
+  top: -10px;
+}
+
+/* Additional responsive improvements */
+@media (max-width: 767px) {
+  .timeline-icon {
+    left: -15px;
+    width: 12px;
+    height: 25px;
+  }
+
+  /* Improve mobile spacing */
+  .ml-30 {
+    margin-left: 20px;
+  }
+
+  .mt-10 {
+    margin-top: 8px;
+  }
+}
+
+/* Tablet responsive improvements */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ml-30 {
+    margin-left: 25px;
+  }
+}
+
+/* Ensure proper spacing on all devices */
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 767px) {
+  input,
+  button {
+    min-height: 44px;
+  }
+
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Register form specific responsive adjustments */
+.register-form .form-group {
+  margin: 12px 0;
+}
+
+@media (min-width: 768px) {
+  .register-form .form-group {
+    margin: 15px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .register-form .form-group {
+    margin: 18px 0;
+  }
+}
+
+/* Ensure register form fits well on mobile */
+@media (max-width: 767px) {
+  .login-box {
+    margin-top: 30px;
+  }
+}
+
+/* Mobile backdrop for sidebar */
+@media (max-width: 767px) {
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .sidebar-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Prevent body scroll when sidebar is open */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+}
+
+/* Improve mobile scrolling */
+@media (max-width: 767px) {
+  .item-container {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .item-content.expandable {
+    padding-left: 25px;
+  }
+
+  .item-content.expandable::after {
+    left: 8px;
+    font-size: 0.7rem;
+  }
+
+  .item-content p {
+    margin-left: 15px;
+  }
+
+  /* Mobile drag and drop adjustments */
+  .item-content.draggable::before {
+    left: 3px;
+    font-size: 0.5rem;
+  }
+
+  .item-content.draggable.expandable::after {
+    left: 15px;
+  }
+
+  .item-content.draggable p {
+    margin-left: 30px;
+  }
+}
