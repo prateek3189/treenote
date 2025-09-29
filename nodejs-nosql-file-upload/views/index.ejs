@@ -1,0 +1,44 @@
+<%- include("common/login-header") %>
+    <main>
+      <div class="login-box card">
+        <h2 class="text-center">Login</h2>
+        <% if(error) { %> 
+          <p class="error_message"><%= error %></p>
+          <% } %>
+        <form action="/login" method="post">
+          <input type="hidden" name="_csrf" id="_csrf" value="<%= csrfToken %>">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              required
+              value="<%= email %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+              value="<%= password %>"
+
+            />
+          </div>
+          <button type="submit" class="primary-button">Login</button>
+          <p class="text-center mt-10">
+            Don't have an account? <a href="/register">Register</a>
+          </p>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>
