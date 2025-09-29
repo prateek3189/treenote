@@ -1,0 +1,62 @@
+<%- include("common/header") %>
+
+    <main class="main-container">
+      <div class="item-container">
+        <div class="item-header">
+          <h2>Contact</h2>
+          <a href="/contacts/add" class="primary-button">Add</a>
+        </div>
+        <!-- <form action="">
+          <div class="contact-form">
+            <div class="form-field">
+              <label for="search">Search:</label>
+              <input
+                type="text"
+                id="search"
+                value=""
+                placeholder="Type to search anything..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </form> -->
+
+        <table
+          class="data-table"
+          id="contact-table"
+          cellspadding="0"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Contact #</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(const contact of contacts ) { %>
+            <tr>
+              <td><%= contact.name %></td>
+              <td><%= contact.phone %></td>
+              <td><%= contact.categoryName %></td>
+              <td>
+                <a href="/contacts/edit/<%= contact.id %>"
+                  ><i class="fa-solid fa-pen" style="color: #7f56fb"></i
+                ></a>
+                <a href="javascript: void(0)"
+                  ><i class="fa-solid fa-trash" style="color: #7f56fb"></i
+                ></a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>
