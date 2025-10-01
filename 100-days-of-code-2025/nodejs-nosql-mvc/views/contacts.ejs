@@ -42,7 +42,6 @@
                       ><i class="fa-solid fa-pen" style="color: #7f56fb"></i
                     ></a>
                     <form action="/contacts/delete" method="post">
-                      <input type="hidden" name="_csrf" id="_csrf" value="<%= csrfToken %>">
                       <input type="hidden" name="id" id="id" value="<%= contact._id %>">
                       <button type="submit" class="link">
                         <i class="fa-solid fa-trash" style="color: #7f56fb"></i

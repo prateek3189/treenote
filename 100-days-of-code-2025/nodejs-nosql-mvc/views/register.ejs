@@ -6,7 +6,6 @@
         <p class="error_message"><%= error %></p>
         <% } %>
         <form class="register-form" action="/register" method="post">
-          <input type="hidden" id="_csrf" name="_csrf" value="<%= csrfToken %>">
           <div class="form-group">
             <label for="username">Username</label>
             <input

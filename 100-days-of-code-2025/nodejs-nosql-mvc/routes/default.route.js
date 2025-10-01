@@ -11,7 +11,6 @@ router.get("/", function (req, res) {
     res.redirect("/contacts");
     return;
   }
-  const csrfToken = req.csrfToken();
   let data = req.session.addtionalInfo;
   if (!data) {
     data = {
@@ -24,7 +23,6 @@ router.get("/", function (req, res) {
     error: data.error,
     email: data.email,
     password: data.password,
-    csrfToken: csrfToken,
   });
   req.session.addtionalInfo = null;
 });
@@ -48,7 +46,6 @@ router.get("/register", function (req, res) {
         confirm_password: "",
       };
     }
-    const csrfToken = req.csrfToken();
 
     res.render("register", {
       error: data.error,
@@ -56,7 +53,6 @@ router.get("/register", function (req, res) {
       password: data.password,
       confirm_password: data.confirm_password,
       username: data.username,
-      csrfToken: csrfToken,
     });
     req.session.addtionalInfo = null;
   } catch (e) {

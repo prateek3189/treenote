@@ -3,6 +3,7 @@ const db = require("../data/database");
 const xss = require("xss");
 
 const express = require("express");
+const Category = require("../models/category.model");
 const router = express.Router();
 
 // Categories Page
@@ -19,14 +20,12 @@ router.get("/", async function (req, res) {
       type: "",
     };
   }
-  const categories = await db.getDb().collection("categories").find().toArray();
-  const csrfToken = req.csrfToken();
+  const categories = await Category.getAll();
 
   res.render("categories", {
     categories,
     message: data.message,
     type: data.type,
-    csrfToken,
   });
   req.session.additionalInfo = null;
   return;
@@ -39,9 +38,8 @@ router.get("/add", function (req, res) {
     res.redirect("/");
     return;
   }
-  const csrfToken = req.csrfToken();
 
-  res.render("add-category", { csrfToken });
+  res.render("add-category");
 });
 
 // Add Category page
@@ -51,8 +49,8 @@ router.post("/add", async function (req, res) {
     res.redirect("/");
     return;
   }
-  const category = xss(req.body.name);
-  await db.getDb().collection("categories").insertOne({ name: category });
+  const category = new Category(req.body.name);
+  await category.save();
   req.session.additionalInfo = {
     message: "Category created successfully.",
     type: "success",
@@ -67,14 +65,9 @@ router.get("/edit/:id", async function (req, res) {
     res.redirect("/");
     return;
   }
-  const id = req.params.id;
-  const category = await db
-    .getDb()
-    .collection("categories")
-    .findOne({ _id: new ObjectId(id) });
-  const csrfToken = req.csrfToken();
-
-  res.render("edit-category", { category, csrfToken });
+  const category = new Category(null, req.params.id);
+  const categoryData = await category.getCategory();
+  res.render("edit-category", { category: categoryData });
 });
 
 // Update Category page
@@ -84,11 +77,10 @@ router.post("/update", async function (req, res) {
     res.redirect("/");
     return;
   }
-  const catId = new ObjectId(req.body.id);
-  const category = xss(req.body.name);
-  db.getDb()
-    .collection("categories")
-    .updateOne({ _id: catId }, { $set: { name: category } });
+
+  const category = new Category(req.body.name, req.body.id);
+  await category.update();
+
   req.session.additionalInfo = {
     message: "Category updated successfully.",
     type: "success",
@@ -104,8 +96,8 @@ router.post("/delete", async function (req, res) {
     return;
   }
   try {
-    const id = new ObjectId(req.body.id);
-    db.getDb().collection("categories").deleteOne({ _id: id });
+    const category = new Category(null, req.body.id);
+    category.delete();
     req.session.additionalInfo = {
       message: "Category deleted successfully.",
       type: "success",

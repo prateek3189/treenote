@@ -31,8 +31,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="./scripts/app.js" defer></script>
-
     <title>Treenote...</title>
   </head>
   <body>
@@ -92,12 +90,6 @@
 
               <li class="nav-item">
                 <form action="/logout" class="logout-form" method="post">
-                  <input
-                    type="hidden"
-                    name="_csrf"
-                    id="_csrf"
-                    value="<%= csrfToken %>"
-                  />
                   <button type="submit" class="link">
                     Logout
                     <i
