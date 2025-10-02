@@ -1,0 +1,14 @@
+:root {
+  /* Background colors */
+  --primary-button-bg-color: #8555ff;
+  --primary-color: #a684ff;
+  --primary-color-selected: #b69afc;
+  --primary-color-light: #d0befc;
+  --secondary-color: #f3e8ff;
+  --tertiary-color: #e9d4ff;
+
+  /* Text colors */
+  --primary-text-color: #322949;
+
+  --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}

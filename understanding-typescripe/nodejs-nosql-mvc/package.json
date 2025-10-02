@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "build": "tsc app.ts"
+    "start": "nodemon ./dist/app.js",
+    "build": "tsc src/app.ts --watch"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@types/node": "^24.6.2",
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "connect-mongodb-session": "^5.0.0",
@@ -28,6 +27,7 @@
     "@types/express": "^5.0.3",
     "@types/express-session": "^1.18.2",
     "@types/multer": "^2.0.0",
+    "@types/node": "^24.6.2",
     "nodemon": "^3.1.10"
   }
 }

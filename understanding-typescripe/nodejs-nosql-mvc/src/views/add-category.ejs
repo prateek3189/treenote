@@ -1,0 +1,34 @@
+<%- include("common/header") %>
+    <main class="main-container">
+      <div class="item-container">
+        <div class="item-header">
+          <h2>Add Category</h2>
+        </div>
+        <form action="/categories/add" method="post">
+
+          <div class="contact-form vertical">
+            <div class="form-field">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value=""
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <button class="primary-button">Add</button>
+              <button class="secondary-button ml-10">Cancel</button>
+              <a href="/categories" class="secondary-button ml-10">Back</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>

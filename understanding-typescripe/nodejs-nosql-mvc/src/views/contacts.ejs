@@ -1,0 +1,68 @@
+<%- include("common/header") %>
+
+    <main class="main-container">
+      <div class="item-container">
+        <div class="item-header">
+          <h2>Contact</h2>
+          <a href="/contacts/add" class="primary-button">Add</a>
+        </div>
+
+        <% if(message) { %> 
+          <div class="<%= message && type && type === "error" ? 'error_message' : 'success_message' %>">
+            <%= message %>
+          </div>
+          
+          <% } %>
+        <table
+          class="data-table"
+          id="contact-table"
+          cellspadding="0"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Contact #</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(contacts.length) { %>
+              <% for(const contact of contacts ) { %>
+                <tr>
+                  <td>
+                    <img src="<%= contact.avatar || "uploads/no-image.jpg" %>" alt="<%= contact.name %>" class="avatar">
+                    <%= contact.name %>
+                  </td>
+                  <td><%= contact.phone %></td>
+                  <td><%= contact.categoryName %></td>
+                  <td class="flex-action">
+                    <a href="/contacts/edit/<%= contact._id %>"
+                      ><i class="fa-solid fa-pen" style="color: #7f56fb"></i
+                    ></a>
+                    <form action="/contacts/delete" method="post">
+                      <input type="hidden" name="id" id="id" value="<%= contact._id %>">
+                      <button type="submit" class="link">
+                        <i class="fa-solid fa-trash" style="color: #7f56fb"></i
+                          >
+                       </button>
+                    </form>
+                     
+                      </a>
+                  </td>
+                </tr>
+                <% } %>
+               <% } else { %> <tr>
+                <td colspan="4">No Contacts Found</td>
+              </tr><% }%>
+            
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>
