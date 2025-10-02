@@ -1,0 +1,64 @@
+<%- include("common/login-header") %>
+    <main>
+      <div class="login-box card">
+        <h2 class="text-center">Register</h2>
+        <% if(error) { %> 
+        <p class="error_message"><%= error %></p>
+        <% } %>
+        <form class="register-form" action="/register" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              required
+              value="<%= username %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+              value="<%= email %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+              value="<%= password %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Password"
+              required
+              value="<%= confirm_password %>"
+            />
+          </div>
+          <button type="submit" class="primary-button">Register</button>
+          <p class="text-center mt-10">
+            Already have an account? <a href="/">Login</a>
+          </p>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>

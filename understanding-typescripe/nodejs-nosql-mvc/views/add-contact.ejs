@@ -1,0 +1,56 @@
+<%- include("common/header") %>
+<script src="/scripts/file-preview.js" defer></script>
+
+    <main class="main-container">
+      <div class="item-container">
+        <div class="item-header">
+          <h2>Add Contact</h2>
+        </div>
+        <form action="/contacts/add" method="post" enctype="multipart/form-data">
+          <div class="contact-form vertical">
+            <div class="form-field">
+              <div class="form-field">
+                <img src="/uploads/no-image.jpg" alt="Your picked image" id="image-preview" class="avatar-thumb"/>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" value="" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Contact #:</label>
+              <input type="text" id="phone" name="phone" value="" required />
+            </div>
+            <div class="form-field">
+              <label for="category">Category:</label>
+              <select name="category" id="category" class="<%= categories.length <= 0 ? 'invalid' : '' %>>">
+                <% if(categories.length > 0) { %> 
+                <% for(const cat of categories) { %>
+                <option value="<%= cat._id %>"><%= cat.name %></option>
+                <% } %>
+                <% } else {
+                  %> 
+                  <option value="" selected>Create a Category</option>
+             <% } %>
+              </select>
+              
+            </div>
+            <div class="form-field">
+              <label for="avatar">Avatar:</label>
+              <input type="file" id="avatar" name="avatar" value="" required accept=".jpg,.jpeg,.png,.gif" />
+            </div>
+            
+            <div class="form-field">
+              <button class="primary-button">Add</button>
+              <button class="secondary-button ml-10">Cancel</button>
+              <a href="/contacts" class="secondary-button ml-10">Back</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>Treenote &copy; 2025</p>
+    </footer>
+  </body>
+</html>
