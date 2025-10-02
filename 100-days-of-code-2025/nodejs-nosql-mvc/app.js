@@ -8,7 +8,6 @@ const sessionConfig = require("./config/session");
 const express = require("express");
 const authMiddleware = require("./middleware/auth-middleware");
 const cookieParser = require("cookie-parser");
-const unless = require("express-unless");
 
 const mongoDbSessionStore = sessionConfig.createSessionStore(session);
 const app = express();
