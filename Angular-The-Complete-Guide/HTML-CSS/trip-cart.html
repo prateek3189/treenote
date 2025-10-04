@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniCart - Trip Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="MiniCart" width="120" height="40" />
+          </a>
+          <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="trip-cart.html" class="nav-link">Trip Cart</a>
+            <a href="my-orders.html" class="nav-link">My Orders</a>
+          </nav>
+          <div class="header-actions">
+            <div class="search-container">
+              <input
+                type="search"
+                placeholder="Search products..."
+                class="search-input"
+                disabled
+              />
+            </div>
+            <a href="trip-cart.html" class="cart-link">
+              <span class="cart-icon">🛒</span>
+              <span id="miniCartCount" class="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Trip Cart</h1>
+          <a href="index.html" class="btn btn-outline">Continue Shopping</a>
+        </div>
+
+        <div class="cart-layout">
+          <div class="cart-content">
+            <div id="cartList" class="cart-list">
+              <!-- Cart items will be populated by JS -->
+            </div>
+
+            <div id="emptyCart" class="empty-cart" style="display: none">
+              <div class="empty-illustration">🛒</div>
+              <h3>Your cart is empty</h3>
+              <p>Start shopping to add items to your cart.</p>
+              <a href="index.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+          </div>
+
+          <div class="cart-summary">
+            <div class="summary-card">
+              <h3>Order Summary</h3>
+
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal" class="price">₹0</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span id="cartShipping" class="price">₹0</span>
+              </div>
+
+              <div class="summary-row" id="discountRow" style="display: none">
+                <span>Discount</span>
+                <span id="cartDiscount" class="price discount">-₹0</span>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="cartTotal" class="price total">₹0</span>
+              </div>
+
+              <button
+                id="btnCheckout"
+                class="btn btn-primary btn-large"
+                disabled
+              >
+                Proceed to Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="currentYear"></span> MiniCart. All rights reserved.
+          </p>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <output id="toast" class="toast" aria-live="polite"></output>
+
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/pages/cart.js"></script>
+  </body>
+</html>

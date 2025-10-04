@@ -1,0 +1,249 @@
+[
+  {
+    "id": "p-1001",
+    "name": "Classic White Tee",
+    "slug": "classic-white-tee",
+    "price": 599,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Apparel",
+    "brand": "BasicCo",
+    "rating": 4.5,
+    "reviewsCount": 128,
+    "shortDesc": "Soft cotton crew-neck tee.",
+    "longDesc": "100% cotton. Regular fit. Durable collar. Machine-washable. Perfect for everyday wear.",
+    "stock": 42,
+    "options": {
+      "size": ["S", "M", "L", "XL"],
+      "color": ["White", "Black", "Navy"]
+    },
+    "badges": ["Bestseller"]
+  },
+  {
+    "id": "p-1002",
+    "name": "Wireless Bluetooth Headphones",
+    "slug": "wireless-bluetooth-headphones",
+    "price": 2499,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Electronics",
+    "brand": "SoundMax",
+    "rating": 4.2,
+    "reviewsCount": 89,
+    "shortDesc": "High-quality wireless headphones with noise cancellation.",
+    "longDesc": "Premium wireless headphones featuring active noise cancellation, 30-hour battery life, and crystal-clear sound quality. Perfect for music lovers and professionals.",
+    "stock": 15,
+    "options": {
+      "color": ["Black", "White", "Blue"]
+    },
+    "badges": ["Popular"]
+  },
+  {
+    "id": "p-1003",
+    "name": "Organic Green Tea",
+    "slug": "organic-green-tea",
+    "price": 299,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Food & Beverages",
+    "brand": "PureTea",
+    "rating": 4.7,
+    "reviewsCount": 203,
+    "shortDesc": "Premium organic green tea leaves.",
+    "longDesc": "Hand-picked organic green tea leaves from the finest gardens. Rich in antioxidants and provides a smooth, refreshing taste.",
+    "stock": 67,
+    "options": {
+      "size": ["50g", "100g", "250g"]
+    },
+    "badges": ["Organic", "Healthy"]
+  },
+  {
+    "id": "p-1004",
+    "name": "Denim Jacket",
+    "slug": "denim-jacket",
+    "price": 1299,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Apparel",
+    "brand": "DenimCo",
+    "rating": 4.3,
+    "reviewsCount": 156,
+    "shortDesc": "Classic denim jacket with modern fit.",
+    "longDesc": "Stylish denim jacket made from premium cotton denim. Features a classic collar design with multiple pockets and durable construction.",
+    "stock": 23,
+    "options": {
+      "size": ["S", "M", "L", "XL"],
+      "color": ["Blue", "Black"]
+    },
+    "badges": ["New Arrival"]
+  },
+  {
+    "id": "p-1005",
+    "name": "Smart Fitness Watch",
+    "slug": "smart-fitness-watch",
+    "price": 8999,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Electronics",
+    "brand": "FitTech",
+    "rating": 4.6,
+    "reviewsCount": 312,
+    "shortDesc": "Advanced fitness tracking with heart rate monitor.",
+    "longDesc": "Comprehensive fitness watch with GPS, heart rate monitoring, sleep tracking, and 7-day battery life. Water-resistant design perfect for all activities.",
+    "stock": 8,
+    "options": {
+      "size": ["Small", "Medium", "Large"],
+      "color": ["Black", "Silver", "Rose Gold"]
+    },
+    "badges": ["Bestseller", "Premium"]
+  },
+  {
+    "id": "p-1006",
+    "name": "Artisan Coffee Beans",
+    "slug": "artisan-coffee-beans",
+    "price": 899,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Food & Beverages",
+    "brand": "BrewMaster",
+    "rating": 4.8,
+    "reviewsCount": 187,
+    "shortDesc": "Single-origin coffee beans from premium farms.",
+    "longDesc": "Carefully selected single-origin coffee beans roasted to perfection. Rich flavor profile with notes of chocolate and caramel.",
+    "stock": 34,
+    "options": {
+      "roast": ["Light", "Medium", "Dark"],
+      "size": ["250g", "500g", "1kg"]
+    },
+    "badges": ["Premium", "Artisan"]
+  },
+  {
+    "id": "p-1007",
+    "name": "Canvas Sneakers",
+    "slug": "canvas-sneakers",
+    "price": 1599,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Footwear",
+    "brand": "WalkEasy",
+    "rating": 4.4,
+    "reviewsCount": 245,
+    "shortDesc": "Comfortable canvas sneakers for everyday wear.",
+    "longDesc": "Classic canvas sneakers with comfortable rubber sole and breathable upper. Perfect for casual outings and daily activities.",
+    "stock": 56,
+    "options": {
+      "size": ["6", "7", "8", "9", "10", "11"],
+      "color": ["White", "Black", "Navy", "Red"]
+    },
+    "badges": ["Comfort"]
+  },
+  {
+    "id": "p-1008",
+    "name": "Portable Power Bank",
+    "slug": "portable-power-bank",
+    "price": 1999,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Electronics",
+    "brand": "PowerMax",
+    "rating": 4.1,
+    "reviewsCount": 167,
+    "shortDesc": "High-capacity power bank with fast charging.",
+    "longDesc": "20000mAh power bank with fast charging technology. Features multiple USB ports and LED indicators. Perfect for travel and emergencies.",
+    "stock": 29,
+    "options": {
+      "color": ["Black", "White", "Blue"]
+    },
+    "badges": ["Fast Charging"]
+  },
+  {
+    "id": "p-1009",
+    "name": "Leather Wallet",
+    "slug": "leather-wallet",
+    "price": 799,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Accessories",
+    "brand": "LeatherCraft",
+    "rating": 4.5,
+    "reviewsCount": 98,
+    "shortDesc": "Genuine leather wallet with multiple card slots.",
+    "longDesc": "Handcrafted genuine leather wallet with RFID blocking technology. Features multiple card slots, cash compartment, and coin pocket.",
+    "stock": 41,
+    "options": {
+      "color": ["Brown", "Black", "Tan"]
+    },
+    "badges": ["Handcrafted", "RFID Blocking"]
+  },
+  {
+    "id": "p-1010",
+    "name": "Yoga Mat",
+    "slug": "yoga-mat",
+    "price": 1299,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Sports & Fitness",
+    "brand": "FlexFit",
+    "rating": 4.6,
+    "reviewsCount": 178,
+    "shortDesc": "Non-slip yoga mat with carrying strap.",
+    "longDesc": "Premium non-slip yoga mat made from eco-friendly materials. Extra thick for comfort and includes a carrying strap for easy transport.",
+    "stock": 22,
+    "options": {
+      "color": ["Purple", "Blue", "Green", "Pink"],
+      "thickness": ["6mm", "8mm"]
+    },
+    "badges": ["Eco-Friendly", "Non-Slip"]
+  },
+  {
+    "id": "p-1011",
+    "name": "Ceramic Coffee Mug",
+    "slug": "ceramic-coffee-mug",
+    "price": 399,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Home & Kitchen",
+    "brand": "CupCraft",
+    "rating": 4.3,
+    "reviewsCount": 134,
+    "shortDesc": "Handcrafted ceramic mug with ergonomic handle.",
+    "longDesc": "Beautiful handcrafted ceramic coffee mug with a comfortable handle and smooth finish. Perfect for your morning coffee or tea.",
+    "stock": 73,
+    "options": {
+      "color": ["White", "Black", "Blue", "Green"],
+      "size": ["Regular", "Large"]
+    },
+    "badges": ["Handcrafted"]
+  },
+  {
+    "id": "p-1012",
+    "name": "Wireless Mouse",
+    "slug": "wireless-mouse",
+    "price": 1299,
+    "currency": "INR",
+    "thumbnail": "/assets/placeholder.png",
+    "images": ["/assets/placeholder.png"],
+    "category": "Electronics",
+    "brand": "ClickTech",
+    "rating": 4.2,
+    "reviewsCount": 89,
+    "shortDesc": "Ergonomic wireless mouse with long battery life.",
+    "longDesc": "Comfortable wireless mouse with ergonomic design and precision tracking. Features long battery life and quiet clicking mechanism.",
+    "stock": 45,
+    "options": {
+      "color": ["Black", "White", "Silver"]
+    },
+    "badges": ["Ergonomic"]
+  }
+]

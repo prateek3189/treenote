@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniCart - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="MiniCart" width="120" height="40" />
+          </a>
+          <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="trip-cart.html" class="nav-link">Trip Cart</a>
+            <a href="my-orders.html" class="nav-link">My Orders</a>
+          </nav>
+          <div class="header-actions">
+            <div class="search-container">
+              <input
+                type="search"
+                placeholder="Search products..."
+                class="search-input"
+                disabled
+              />
+            </div>
+            <a href="trip-cart.html" class="cart-link">
+              <span class="cart-icon">🛒</span>
+              <span id="miniCartCount" class="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Checkout</h1>
+        </div>
+
+        <!-- Step Indicator -->
+        <div class="stepper" id="stepper">
+          <div class="stepper-step completed" data-step="shipping">
+            <div class="step-number">1</div>
+            <div class="step-label">Shipping</div>
+          </div>
+          <div class="stepper-step" data-step="billing">
+            <div class="step-number">2</div>
+            <div class="step-label">Billing</div>
+          </div>
+          <div class="stepper-step" data-step="payment">
+            <div class="step-number">3</div>
+            <div class="step-label">Payment</div>
+          </div>
+          <div class="stepper-step" data-step="confirmation">
+            <div class="step-number">4</div>
+            <div class="step-label">Confirmation</div>
+          </div>
+        </div>
+
+        <div class="checkout-content">
+          <!-- Shipping Step -->
+          <section id="stepShipping" class="checkout-step active">
+            <h2>Shipping Information</h2>
+            <form id="shippingForm" class="checkout-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="shippingFullName" class="form-label"
+                    >Full Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="shippingFullName"
+                    name="fullName"
+                    class="form-input"
+                    required
+                  />
+                  <div class="error-message" id="shippingFullNameError"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="shippingAddress1" class="form-label"
+                    >Address Line 1 *</label
+                  >
+                  <input
+                    type="text"
+                    id="shippingAddress1"
+                    name="address1"
+                    class="form-input"
+                    required
+                  />
+                  <div class="error-message" id="shippingAddress1Error"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="shippingAddress2" class="form-label"
+                    >Address Line 2</label
+                  >
+                  <input
+                    type="text"
+                    id="shippingAddress2"
+                    name="address2"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="shippingCity" class="form-label">City *</label>
+                  <input
+                    type="text"
+                    id="shippingCity"
+                    name="city"
+                    class="form-input"
+                    required
+                  />
+                  <div class="error-message" id="shippingCityError"></div>
+                </div>
+                <div class="form-field">
+                  <label for="shippingState" class="form-label">State *</label>
+                  <input
+                    type="text"
+                    id="shippingState"
+                    name="state"
+                    class="form-input"
+                    required
+                  />
+                  <div class="error-message" id="shippingStateError"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="shippingPostalCode" class="form-label"
+                    >Postal Code *</label
+                  >
+                  <input
+                    type="text"
+                    id="shippingPostalCode"
+                    name="postalCode"
+                    class="form-input"
+                    required
+                  />
+                  <div class="error-message" id="shippingPostalCodeError"></div>
+                </div>
+                <div class="form-field">
+                  <label for="shippingCountry" class="form-label"
+                    >Country *</label
+                  >
+                  <select
+                    id="shippingCountry"
+                    name="country"
+                    class="form-select"
+                    required
+                  >
+                    <option value="IN">India</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="shippingPhone" class="form-label"
+                    >Phone Number *</label
+                  >
+                  <input
+                    type="tel"
+                    id="shippingPhone"
+                    name="phone"
+                    class="form-input"
+                    required
+                  />
+                  <div class="error-message" id="shippingPhoneError"></div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="button"
+                  id="btnNextShipping"
+                  class="btn btn-primary"
+                >
+                  Next: Billing
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Billing Step -->
+          <section id="stepBilling" class="checkout-step">
+            <h2>Billing Information</h2>
+            <form id="billingForm" class="checkout-form">
+              <div class="form-field checkbox-field">
+                <label class="checkbox-label" for="sameAsShipping">
+                  <input
+                    type="checkbox"
+                    id="sameAsShipping"
+                    name="sameAsShipping"
+                    checked
+                  />
+                  <span class="checkbox-text"
+                    >Billing address same as shipping</span
+                  >
+                </label>
+              </div>
+
+              <div id="billingFields" style="display: none">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="billingFullName" class="form-label"
+                      >Full Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="billingFullName"
+                      name="fullName"
+                      class="form-input"
+                    />
+                    <div class="error-message" id="billingFullNameError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="billingAddress1" class="form-label"
+                      >Address Line 1 *</label
+                    >
+                    <input
+                      type="text"
+                      id="billingAddress1"
+                      name="address1"
+                      class="form-input"
+                    />
+                    <div class="error-message" id="billingAddress1Error"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="billingAddress2" class="form-label"
+                      >Address Line 2</label
+                    >
+                    <input
+                      type="text"
+                      id="billingAddress2"
+                      name="address2"
+                      class="form-input"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="billingCity" class="form-label">City *</label>
+                    <input
+                      type="text"
+                      id="billingCity"
+                      name="city"
+                      class="form-input"
+                    />
+                    <div class="error-message" id="billingCityError"></div>
+                  </div>
+                  <div class="form-field">
+                    <label for="billingState" class="form-label">State *</label>
+                    <input
+                      type="text"
+                      id="billingState"
+                      name="state"
+                      class="form-input"
+                    />
+                    <div class="error-message" id="billingStateError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="billingPostalCode" class="form-label"
+                      >Postal Code *</label
+                    >
+                    <input
+                      type="text"
+                      id="billingPostalCode"
+                      name="postalCode"
+                      class="form-input"
+                    />
+                    <div
+                      class="error-message"
+                      id="billingPostalCodeError"
+                    ></div>
+                  </div>
+                  <div class="form-field">
+                    <label for="billingCountry" class="form-label"
+                      >Country *</label
+                    >
+                    <select
+                      id="billingCountry"
+                      name="country"
+                      class="form-select"
+                    >
+                      <option value="IN">India</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="billingPhone" class="form-label"
+                      >Phone Number *</label
+                    >
+                    <input
+                      type="tel"
+                      id="billingPhone"
+                      name="phone"
+                      class="form-input"
+                    />
+                    <div class="error-message" id="billingPhoneError"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="button"
+                  id="btnBackBilling"
+                  class="btn btn-outline"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  id="btnNextBilling"
+                  class="btn btn-primary"
+                >
+                  Next: Payment
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Payment Step -->
+          <section id="stepPayment" class="checkout-step">
+            <h2>Payment Information</h2>
+            <form id="paymentForm" class="checkout-form">
+              <div class="payment-methods">
+                <div class="form-field">
+                  <label class="form-label">Payment Method *</label>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="card"
+                        checked
+                      />
+                      <span class="radio-text">Credit/Debit Card</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="paymentMethod" value="upi" />
+                      <span class="radio-text">UPI</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="paymentMethod" value="cod" />
+                      <span class="radio-text">Cash on Delivery</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div id="cardFields" class="card-fields">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="cardName" class="form-label"
+                      >Name on Card *</label
+                    >
+                    <input
+                      type="text"
+                      id="cardName"
+                      name="cardName"
+                      class="form-input"
+                    />
+                    <div class="error-message" id="cardNameError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="cardNumber" class="form-label"
+                      >Card Number *</label
+                    >
+                    <input
+                      type="text"
+                      id="cardNumber"
+                      name="cardNumber"
+                      class="form-input"
+                      maxlength="19"
+                    />
+                    <div class="error-message" id="cardNumberError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="cardExpiry" class="form-label"
+                      >Expiry Date *</label
+                    >
+                    <input
+                      type="text"
+                      id="cardExpiry"
+                      name="cardExpiry"
+                      class="form-input"
+                      placeholder="MM/YY"
+                      maxlength="5"
+                    />
+                    <div class="error-message" id="cardExpiryError"></div>
+                  </div>
+                  <div class="form-field">
+                    <label for="cardCvv" class="form-label">CVV *</label>
+                    <input
+                      type="text"
+                      id="cardCvv"
+                      name="cardCvv"
+                      class="form-input"
+                      maxlength="3"
+                    />
+                    <div class="error-message" id="cardCvvError"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="button"
+                  id="btnBackPayment"
+                  class="btn btn-outline"
+                >
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  id="btnPlaceOrder"
+                  class="btn btn-primary"
+                >
+                  Pay & Place Order
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Confirmation Step -->
+          <section id="stepConfirmation" class="checkout-step">
+            <div class="confirmation-content">
+              <div class="success-icon">✅</div>
+              <h2>Order Confirmed!</h2>
+              <p class="order-id">
+                Order ID: <strong id="orderId">MINI-1234567890</strong>
+              </p>
+              <p class="confirmation-message">
+                Thank you for your purchase. You will receive an email
+                confirmation shortly.
+              </p>
+
+              <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="confirmationItems" class="confirmation-items">
+                  <!-- Order items will be populated by JS -->
+                </div>
+                <div class="confirmation-total">
+                  <div class="summary-row">
+                    <span>Total</span>
+                    <span id="confirmationTotal" class="price">₹0</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="confirmation-actions">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <a href="my-orders.html" class="btn btn-outline"
+                  >View My Orders</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="currentYear"></span> MiniCart. All rights reserved.
+          </p>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <output id="toast" class="toast" aria-live="polite"></output>
+
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/pages/checkout.js"></script>
+  </body>
+</html>

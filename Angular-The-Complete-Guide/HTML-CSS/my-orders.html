@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniCart - My Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="MiniCart" width="120" height="40" />
+          </a>
+          <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="trip-cart.html" class="nav-link">Trip Cart</a>
+            <a href="my-orders.html" class="nav-link">My Orders</a>
+          </nav>
+          <div class="header-actions">
+            <div class="search-container">
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Search orders..."
+                class="search-input"
+              />
+            </div>
+            <a href="trip-cart.html" class="cart-link">
+              <span class="cart-icon">🛒</span>
+              <span id="miniCartCount" class="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>My Orders</h1>
+          <div class="orders-summary">
+            <div class="summary-item">
+              <span class="summary-label">Total Orders</span>
+              <span id="totalOrders" class="summary-value">0</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Pending</span>
+              <span id="pendingOrders" class="summary-value pending">0</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Completed</span>
+              <span id="completedOrders" class="summary-value completed"
+                >0</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Filters -->
+        <div class="order-filters">
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">
+              All Orders
+            </button>
+            <button class="filter-tab" data-filter="pending">Pending</button>
+            <button class="filter-tab" data-filter="shipped">Shipped</button>
+            <button class="filter-tab" data-filter="delivered">
+              Delivered
+            </button>
+            <button class="filter-tab" data-filter="cancelled">
+              Cancelled
+            </button>
+          </div>
+          <div class="filter-actions">
+            <select id="sortOrders" class="form-select">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="amount-high">Amount: High to Low</option>
+              <option value="amount-low">Amount: Low to High</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Orders List -->
+        <div class="orders-container">
+          <div id="ordersList" class="orders-list">
+            <!-- Orders will be populated by JavaScript -->
+          </div>
+
+          <div id="emptyOrders" class="empty-orders" style="display: none">
+            <div class="empty-illustration">📦</div>
+            <h3>No orders found</h3>
+            <p>
+              You haven't placed any orders yet or no orders match your current
+              filter.
+            </p>
+            <a href="index.html" class="btn btn-primary">Start Shopping</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="currentYear"></span> MiniCart. All rights reserved.
+          </p>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/pages/my-orders.js"></script>
+  </body>
+</html>
